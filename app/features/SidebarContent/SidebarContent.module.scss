@@ -1,0 +1,26 @@
+.content {
+    &__search {
+        margin: 12px 24px;
+    }
+
+    &__users {
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin: 0 2px 0 12px;
+        padding-right: 6px;
+        padding-bottom: 12px;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--Darkner-darkner-4);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--Text-text-third);
+            border-radius: 4px;
+        }
+    }
+}

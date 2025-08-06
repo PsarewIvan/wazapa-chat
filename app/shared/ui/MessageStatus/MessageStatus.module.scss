@@ -1,0 +1,12 @@
+.icon {
+    width: 24px;
+    height: 24px;
+
+    &_default {
+        color: var(--Text-text-third);
+    }
+
+    &_active {
+        color: var(--Accent-link-400);
+    }
+}

@@ -1,0 +1,38 @@
+.user-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 12px 12px 8px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--Interface-background);
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &_active {
+        background-color: var(--Accent-link-50);
+    }
+
+    &__avatar {
+        flex-shrink: 0;
+    }
+
+    &__message-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-left: auto;
+    }
+
+    &__time {
+        text-wrap: nowrap;
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--Text-text-secondary);
+    }
+
+    &__status {
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,19 @@
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &__name {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__message {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-height: 16px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}

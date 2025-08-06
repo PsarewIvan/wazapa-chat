@@ -1,0 +1,39 @@
+.avatar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--Darkner-darkner-8);
+    border-radius: 50%;
+
+    &__image {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+
+        &_unknown {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__messenger-wrapper {
+        position: absolute;
+        right: -4px;
+        bottom: -4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: var(--Interface-background);
+    }
+
+    &__messenger {
+        width: 16px;
+        height: 16px;
+    }
+}

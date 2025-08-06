@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('/Roboto.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/Roboto-Italic.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --Interface-background-wa: #e6e2db;
+    --Interface-background: #ffffff;
+    --Darkner-darkner-4: #0000000a;
+    --Darkner-darkner-8: #00000014;
+    --Darkner-darkner-24: #0000003d;
+    --Accent-accent-500: #ff6b00;
+    --Accent-link-50: #e7eefa;
+    --Accent-link-400: #3c79d9;
+    --Accent-link-500: #0b57d0;
+    --Text-text-primary: #272a2a;
+    --Text-text-secondary: #272a2ab8;
+    --Text-text-primary-invert: #ffffffeb;
+    --Text-text-third: #272a2a8f;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: var(--Text-text-primary);
+}
