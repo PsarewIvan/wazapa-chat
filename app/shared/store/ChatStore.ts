@@ -64,6 +64,12 @@ export class ChatStore {
 
         return this.chats.get(this.activeUserId)?.messages ?? [];
     }
+
+    get activeUser(): UserType | null {
+        if (!this.activeUserId) return null;
+
+        return this.users.find((user) => user.id === this.activeUserId) ?? null;
+    }
 }
 
 export const chatStore = new ChatStore();

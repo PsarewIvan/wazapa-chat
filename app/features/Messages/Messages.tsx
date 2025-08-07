@@ -1,0 +1,42 @@
+import { useRef } from 'react';
+import { observer } from 'mobx-react-lite';
+import classNames from 'classnames';
+import { useStore } from '~/shared/providers/StoreContext';
+import Message from '~/shared/ui/Message/Message';
+import ChatContainer from '~/shared/ui/ChatContainer/ChatContainer';
+import styles from './Messages.module.scss';
+
+function Messages() {
+    const { activeUserId, messagesForActiveUser } = useStore();
+
+    const hasPrevOwnRef = useRef(false);
+
+    return (
+        <ChatContainer messages={messagesForActiveUser}>
+            {messagesForActiveUser.map((message, index) => {
+                const hasOwn = message.receiverId === activeUserId;
+
+                const classNameMargin =
+                    index !== 0 && hasOwn === hasPrevOwnRef.current
+                        ? styles['message_self']
+                        : styles['message_group'];
+
+                hasPrevOwnRef.current = hasOwn;
+                return (
+                    <Message
+                        className={classNames(classNameMargin, {
+                            [styles['message_active']]: hasOwn,
+                        })}
+                        key={message.id}
+                        attachments={message.attachments}
+                        hasOwn={message.receiverId === activeUserId}
+                        text={message.text}
+                        timestamp={message.timestamp}
+                    />
+                );
+            })}
+        </ChatContainer>
+    );
+}
+
+export default observer(Messages);

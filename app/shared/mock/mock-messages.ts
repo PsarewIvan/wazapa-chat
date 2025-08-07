@@ -74,6 +74,12 @@ export const MOCK_MASSAGES: Omit<MessageType, 'id' | 'timestamp'>[] = [
                 name: 'image3.jpg',
                 size: 2 * 1024 * 1024, // 2 MB
             },
+            {
+                type: 'image',
+                url: image1,
+                name: 'image4.jpg',
+                size: 2 * 1024 * 1024, // 2 MB
+            },
         ],
     },
     {

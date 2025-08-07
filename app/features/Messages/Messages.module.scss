@@ -1,0 +1,13 @@
+.message {
+    &_self {
+        margin-top: 4px;
+    }
+
+    &_group {
+        margin-top: 12px;
+    }
+
+    &_active {
+        margin-left: auto;
+    }
+}

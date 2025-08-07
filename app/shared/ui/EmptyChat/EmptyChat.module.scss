@@ -1,0 +1,12 @@
+.wrapper {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 12px;
+    background-color: var(--Text-text-third);
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--Text-text-primary-invert);
+}

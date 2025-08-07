@@ -1,0 +1,40 @@
+.message {
+    position: relative;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 12px 8px;
+    border-radius: 12px 12px 12px 0;
+    background-color: var(--Interface-background);
+
+    &_own {
+        border-radius: 12px 12px 0 12px;
+        background-color: var(--Accent-link-150);
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__time {
+        margin-left: auto;
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--Text-text-third);
+    }
+
+    &__sender-icon {
+        position: absolute;
+        bottom: 0;
+        right: -4px;
+        color: var(--Accent-link-150);
+    }
+
+    &__receiver-icon {
+        position: absolute;
+        bottom: 0;
+        left: -4px;
+        color: var(--Interface-background);
+    }
+}
