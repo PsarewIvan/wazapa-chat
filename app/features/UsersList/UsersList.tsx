@@ -10,11 +10,12 @@ function UsersList() {
         <div className={styles['users-list']}>
             {users.map((user) => (
                 <UserItem
+                    key={user.id}
                     id={user.id}
                     name={user.name}
                     avatarUrl={user.avatarSrc}
                     messenger={user.messenger}
-                    key={user.id}
+                    unreadCount={user.unreadCount}
                 />
             ))}
         </div>

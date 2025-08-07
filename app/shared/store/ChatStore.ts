@@ -4,8 +4,6 @@ import { loadMessages } from '../api/loadMessages';
 import { loadUsers } from '../api/loadUsers';
 import type { UserChatType } from './types';
 
-const LIMIT = 20; // Количество загружаемых элементов'
-
 export class ChatStore {
     activeUserId: string | null = null;
     chats: Map<string, UserChatType> = new Map();
@@ -23,13 +21,10 @@ export class ChatStore {
 
     initUsers = async () => {
         // имитация API запроса
-        const users = await loadUsers({
-            offset: this.users.length,
-            limit: LIMIT,
-        });
+        const users = await loadUsers();
 
         runInAction(() => {
-            this.users = [...this.users, ...users];
+            this.users = users;
         });
 
         users.forEach((user) => {
@@ -55,8 +50,6 @@ export class ChatStore {
 
         // имитация API запроса
         const messages = await loadMessages({
-            offset: existing.messages.length,
-            limit: LIMIT,
             userId,
         });
 

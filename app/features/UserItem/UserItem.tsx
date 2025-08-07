@@ -43,14 +43,26 @@ function UserItem({ avatarUrl, name, id, messenger, unreadCount }: Props) {
                 messenger={messenger}
                 url={avatarUrl ?? null}
             />
-            <UserInfo name={name} lastMessage={lastMessage} />
+            <UserInfo
+                className={styles['user-item__info']}
+                name={name}
+                lastMessage={lastMessage}
+            />
             {lastMessage && (
                 <div className={styles['user-item__message-info']}>
                     <div className={styles['user-item__time']}>
                         {getFormattedTime(lastMessage.timestamp)}
                     </div>
                     {unreadCount ? (
-                        <div className={styles['user-item__unread-count']}>
+                        <div
+                            className={classNames(
+                                styles['user-item__unread-count'],
+                                {
+                                    [styles['user-item__unread-count_thin']]:
+                                        unreadCount > 999,
+                                }
+                            )}
+                        >
                             {unreadCount}
                         </div>
                     ) : (

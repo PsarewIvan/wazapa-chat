@@ -10,12 +10,21 @@
     cursor: pointer;
     transition: background-color 0.3s;
 
+    &:not(.user-item_active):hover {
+        background-color: var(--Darkner-darkner-4);
+    }
+
     &_active {
         background-color: var(--Accent-link-50);
     }
 
     &__avatar {
         flex-shrink: 0;
+    }
+
+    &__info {
+        flex: 1 1 auto;
+        min-width: 0;
     }
 
     &__message-info {
@@ -30,6 +39,23 @@
         font-size: 12px;
         line-height: 16px;
         color: var(--Text-text-secondary);
+    }
+
+    &__unread-count {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: var(--Status-danger-500);
+        color: var(--Text-text-primary-invert);
+        font-size: 14px;
+        line-height: 20px;
+
+        &_thin {
+            font-size: 10px;
+        }
     }
 
     &__status {

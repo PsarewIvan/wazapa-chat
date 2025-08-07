@@ -24,7 +24,7 @@ export const MOCK_USERS: UserType[] = [
         messenger: 'whatsapp',
         phone: '+7 (555) 902-24-41',
         avatarSrc: avatar2,
-        unreadCount: 1,
+        unreadCount: 8888,
     },
     {
         id: '3',
@@ -62,7 +62,7 @@ export const MOCK_USERS: UserType[] = [
     },
     {
         id: '8',
-        name: 'Kristina',
+        name: 'Kristina Kristina Kristina Kristina Kristina Kristina Kristina Kristina Kristina Kristina',
         messenger: 'whatsapp',
         phone: '+7 (555) 902-24-35',
         avatarSrc: avatar7,
