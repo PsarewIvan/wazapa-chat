@@ -9,6 +9,9 @@
     background-color: transparent;
     border: none;
     border-radius: 12px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
     cursor: pointer;
     transition: background-color 0.3s;
 
@@ -20,5 +23,40 @@
     &:active {
         background-color: var(--Text-text-secondary);
         color: var(--Text-text-primary-invert);
+    }
+
+    &_primary {
+        background-color: var(--Accent-accent-500);
+        color: var(--Text-text-primary-invert);
+
+        &:hover {
+            background-color: var(--Accent-accent-700);
+            color: var(--Text-text-primary-invert);
+        }
+
+        &:active {
+            background-color: var(--Accent-accent-700);
+            color: var(--Text-text-primary-invert);
+        }
+    }
+
+    &_active {
+        background-color: var(--Text-text-secondary);
+        color: var(--Text-text-primary-invert);
+
+        &:hover {
+            background-color: var(--Text-text-secondary);
+            color: var(--Text-text-primary-invert);
+        }
+
+        &.button_primary {
+            background-color: var(--Accent-accent-700);
+            color: var(--Text-text-primary-invert);
+
+            &:hover {
+                background-color: var(--Accent-accent-700);
+                color: var(--Text-text-primary-invert);
+            }
+        }
     }
 }

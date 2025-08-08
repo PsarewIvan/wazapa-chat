@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import classNames from 'classnames';
 import ChatHeader from '~/features/ChatHeader/ChatHeader';
+import ChatInput from '~/features/ChatInput/ChatInput';
 import Messages from '~/features/Messages/Messages';
 import EmptyChat from '~/shared/ui/EmptyChat/EmptyChat';
 import { useStore } from '~/shared/providers/StoreContext';
@@ -19,6 +20,7 @@ function Chat({ className }: Props) {
                 <>
                     <ChatHeader />
                     <Messages />
+                    <ChatInput />
                 </>
             ) : (
                 <EmptyChat className={styles['chat__empty']} />

@@ -1,13 +1,16 @@
 import { makeAutoObservable, runInAction } from 'mobx';
+import { Node } from 'slate';
 import type { UserType } from '../types/user';
 import { loadMessages } from '../api/loadMessages';
 import { loadUsers } from '../api/loadUsers';
+import type { TextEditorValue } from '../ui/TextEditor/types';
 import type { UserChatType } from './types';
 
 export class ChatStore {
     activeUserId: string | null = null;
     chats: Map<string, UserChatType> = new Map();
     users: UserType[] = [];
+    messageToSend: Record<string, TextEditorValue> = {};
 
     constructor() {
         makeAutoObservable(this);
@@ -56,6 +59,20 @@ export class ChatStore {
         runInAction(() => {
             existing.messages = [...messages, ...existing.messages];
             existing.loading = false;
+        });
+    };
+
+    messageChange = (value: TextEditorValue) => {
+        runInAction(() => {
+            if (!this.activeUserId) return;
+
+            const plainText = value.map((node) => Node.string(node)).join('\n');
+
+            if (plainText === '') {
+                delete this.messageToSend[this.activeUserId];
+            } else {
+                this.messageToSend[this.activeUserId] = value;
+            }
         });
     };
 

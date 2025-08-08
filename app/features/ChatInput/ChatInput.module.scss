@@ -1,0 +1,26 @@
+.chat-input {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    border-top: 1px solid var(--Interface-border-100);
+    background-color: var(--Interface-background);
+
+    &__file {
+        flex-shrink: 0;
+        color: var(--Text-text-secondary);
+    }
+
+    &__send {
+        flex-shrink: 0;
+        min-width: 72px;
+    }
+
+    &__file-icon {
+        transition: color 0.3s;
+    }
+
+    &__send-icon {
+        transition: color 0.3s;
+    }
+}

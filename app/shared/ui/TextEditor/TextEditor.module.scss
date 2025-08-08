@@ -1,0 +1,48 @@
+.editable-wrapper {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--Darkner-darkner-24);
+
+    &:hover {
+        border-color: var(--Text-text-third);
+    }
+
+    &:focus-within {
+        border-color: var(--Accent-link-500);
+    }
+}
+
+.editable {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    min-height: 44px;
+    max-height: 120px;
+    border: none;
+    font-size: 14px;
+    line-height: 20px;
+    transition: border-color 0.3s;
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--Darkner-darkner-4);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--Text-text-third);
+        border-radius: 4px;
+    }
+
+    & code {
+        background-color: var(--Darkner-darkner-8);
+    }
+}
