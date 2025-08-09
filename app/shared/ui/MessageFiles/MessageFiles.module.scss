@@ -1,0 +1,50 @@
+.files {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__wrapper {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    &__link-button {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background-color: var(--Accent-link-400);
+        color: var(--Text-text-secondary-invert);
+    }
+
+    &__file-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--Accent-link-400);
+        text-decoration: none;
+    }
+
+    &__size {
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--Text-text-secondary);
+    }
+}

@@ -22,7 +22,10 @@ function MessageImages({ images }: Props) {
             }}
         >
             {previewImages.map((image, index) => (
-                <div key={index} className={styles['images__wrapper']}>
+                <div
+                    key={`${image.name}${image.size}${index}`}
+                    className={styles['images__wrapper']}
+                >
                     <img className={styles['images__img']} src={image.url} />
                     {index === 2 && remainingCount > 0 && (
                         <div className={styles['images__overlay']}>

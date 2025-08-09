@@ -6,6 +6,8 @@ import MessageImages from '../MessageImages/MessageImages';
 import SenderCorner from '~/shared/icons/SenderCorner';
 import ReceiverCorner from '~/shared/icons/ReceiverCorner';
 import { getFormattedTime } from '~/shared/helpers/getFormattedTime';
+import MessageFiles from '../MessageFiles/MessageFiles';
+import MessageAudio from '../MessageAudio/MessageAudio';
 
 type Props = {
     // id: string;
@@ -25,7 +27,9 @@ type Props = {
 };
 
 function Message({ attachments, className, hasOwn, text, timestamp }: Props) {
-    const images = attachments?.filter((item) => item.type === 'image');
+    const images = attachments?.filter((item) => item.type === 'image') ?? [];
+    const files = attachments?.filter((item) => item.type === 'file') ?? [];
+    const audios = attachments?.filter((item) => item.type === 'audio') ?? [];
 
     return (
         <div
@@ -34,6 +38,8 @@ function Message({ attachments, className, hasOwn, text, timestamp }: Props) {
             })}
         >
             {images && <MessageImages images={images} />}
+            {files && <MessageFiles files={files} />}
+            {audios && <MessageAudio audios={audios} />}
             {text && <div className={styles['message__text']}>{text}</div>}
             <div className={styles['message__time']}>
                 {getFormattedTime(timestamp)}
