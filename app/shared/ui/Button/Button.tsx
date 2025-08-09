@@ -1,4 +1,4 @@
-import { memo, type ReactNode } from 'react';
+import { forwardRef, memo, type ReactNode } from 'react';
 import classNames from 'classnames';
 import styles from './Button.module.scss';
 
@@ -10,23 +10,26 @@ type Props = {
     onClick?: () => void;
 };
 
-function Button({ active, className, children, type, onClick }: Props) {
-    return (
-        <button
-            className={classNames(
-                styles['button'],
-                {
-                    [styles['button_primary']]: type === 'primary',
-                    [styles['button_active']]: active,
-                },
-                className
-            )}
-            type="button"
-            onClick={onClick}
-        >
-            {children}
-        </button>
-    );
-}
+const Button = forwardRef<HTMLButtonElement, Props>(
+    ({ active, className, children, type, onClick }, ref) => {
+        return (
+            <button
+                className={classNames(
+                    styles['button'],
+                    {
+                        [styles['button_primary']]: type === 'primary',
+                        [styles['button_active']]: active,
+                    },
+                    className
+                )}
+                ref={ref}
+                type="button"
+                onClick={onClick}
+            >
+                {children}
+            </button>
+        );
+    }
+);
 
 export default memo(Button);

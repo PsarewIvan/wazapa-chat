@@ -1,0 +1,10 @@
+.separator {
+    height: 1px;
+    border: 1px;
+    background-color: var(--Interface-border-100);
+    margin: 4px 0;
+
+    &:last-of-type {
+        display: none;
+    }
+}

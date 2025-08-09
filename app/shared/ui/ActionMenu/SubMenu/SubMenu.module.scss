@@ -1,0 +1,13 @@
+.sub-items {
+    position: absolute;
+    list-style-type: none;
+    z-index: token(z-index-layout);
+    width: 260px;
+    //   background-color: token(color-background-00-default);
+    border-radius: 0 5px 5px 0;
+    //   box-shadow: token(shadow-soft);
+
+    &_left {
+        border-radius: 5px 0 0 5px;
+    }
+}

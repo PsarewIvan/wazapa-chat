@@ -1,0 +1,12 @@
+.popover {
+    z-index: 1;
+
+    @media print {
+        display: none;
+    }
+}
+
+.group-title {
+    margin: 0;
+    padding: 9.5px 12px;
+}
