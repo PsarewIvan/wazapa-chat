@@ -38,12 +38,10 @@ type Props = {
 function ActionMenu({
     className,
     classNamePopover,
-    // hasFlip = true,
     items,
     offset,
     portalContainer,
     position,
-    // strategy,
     target,
     onClose,
     onHidden,

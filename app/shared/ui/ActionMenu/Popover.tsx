@@ -100,7 +100,6 @@ function Popover({
                 props.onHidden();
             }
         };
-        // eslint-disable-next-line
     }, []);
 
     function handleChangePosition(position: TypePopoverPosition): void {

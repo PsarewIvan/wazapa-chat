@@ -71,10 +71,6 @@ const SubMenu = forwardRef<HTMLDivElement, Props>(function SubMenu(
         );
     }
 
-    // const arrowIcon = (
-    //     <ChevronDownIcon className={cn(arrowBlock({ left: isLeft }))} />
-    // );
-
     useEffect(() => {
         resetTimeout();
         updatePosition();
@@ -84,7 +80,6 @@ const SubMenu = forwardRef<HTMLDivElement, Props>(function SubMenu(
         <>
             <Item
                 ref={buttonRef}
-                // addonAfter={arrowIcon}
                 classNameIcon={classNameIcon}
                 dataKey={dataKey}
                 icon={icon}

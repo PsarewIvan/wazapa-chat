@@ -1,13 +1,13 @@
 .sub-items {
     position: absolute;
     list-style-type: none;
-    z-index: token(z-index-layout);
+    z-index: 99;
     width: 260px;
-    //   background-color: token(color-background-00-default);
-    border-radius: 0 5px 5px 0;
-    //   box-shadow: token(shadow-soft);
+    background-color: var(--Interface-background);
+    border-radius: 0 8px 8px 0;
+    box-shadow: var(--shadow-8), var(--shadow-4);
 
     &_left {
-        border-radius: 5px 0 0 5px;
+        border-radius: 8px 0 0 8px;
     }
 }
