@@ -1,23 +1,19 @@
-import React, { memo } from 'react';
-import type { AttachmentType, MessageType } from '~/shared/types/message';
-import styles from './Message.module.scss';
+import { memo } from 'react';
 import classNames from 'classnames';
-import MessageImages from '../MessageImages/MessageImages';
+import type { AttachmentType } from '~/shared/types/message';
 import SenderCorner from '~/shared/icons/SenderCorner';
 import ReceiverCorner from '~/shared/icons/ReceiverCorner';
 import { getFormattedTime } from '~/shared/helpers/getFormattedTime';
+import MessageImages from '../MessageImages/MessageImages';
 import MessageFiles from '../MessageFiles/MessageFiles';
 import MessageAudio from '../MessageAudio/MessageAudio';
+import styles from './Message.module.scss';
 
 type Props = {
-    // id: string;
     className?: string;
     hasOwn: boolean;
     text?: string;
-    // senderId: string;
-    // receiverId: string;
     timestamp: Date;
-    // status: MessageStatusType;
     attachments?: Array<{
         type: AttachmentType;
         url: string;
