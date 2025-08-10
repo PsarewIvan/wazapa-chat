@@ -18,10 +18,18 @@
     }
 
     &__time {
+        display: flex;
+        gap: 4px;
+        align-items: center;
         margin-left: auto;
         font-size: 12px;
         line-height: 16px;
         color: var(--Text-text-third);
+    }
+
+    &__status {
+        width: 16px;
+        height: 16px;
     }
 
     &__sender-icon {

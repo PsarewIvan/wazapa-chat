@@ -30,6 +30,7 @@ function Messages() {
                         key={message.id}
                         attachments={message.attachments}
                         hasOwn={message.receiverId === activeUserId}
+                        status={message.status}
                         text={message.text}
                         timestamp={message.timestamp}
                     />
