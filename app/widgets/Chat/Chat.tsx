@@ -18,7 +18,7 @@ function Chat({ className }: Props) {
         <div className={classNames(styles['chat'], className)}>
             {activeUserId ? (
                 <>
-                    <ChatHeader />
+                    <ChatHeader className={styles['chat__header']} />
                     <Messages />
                     <ChatInput />
                 </>

@@ -24,6 +24,7 @@ export const MOCK_MASSAGES: Omit<MessageType, 'id' | 'timestamp'>[] = [
         receiverId: '',
         attachments: [
             {
+                id: '10',
                 type: 'image',
                 url: image1,
                 name: 'image1.jpg',
@@ -37,12 +38,14 @@ export const MOCK_MASSAGES: Omit<MessageType, 'id' | 'timestamp'>[] = [
         receiverId: '',
         attachments: [
             {
+                id: '11',
                 type: 'image',
                 url: image1,
                 name: 'image1.jpg',
                 size: 1024 * 1024, // 1 MB
             },
             {
+                id: '12',
                 type: 'image',
                 url: image2,
                 name: 'image2.jpg',
@@ -57,24 +60,28 @@ export const MOCK_MASSAGES: Omit<MessageType, 'id' | 'timestamp'>[] = [
         receiverId: '',
         attachments: [
             {
+                id: '1',
                 type: 'image',
                 url: image1,
                 name: 'image1.jpg',
                 size: 1024 * 1024, // 1 MB
             },
             {
+                id: '2',
                 type: 'image',
                 url: image2,
                 name: 'image2.jpg',
                 size: 2 * 1024 * 1024, // 2 MB
             },
             {
+                id: '3',
                 type: 'image',
                 url: image3,
                 name: 'image3.jpg',
                 size: 2 * 1024 * 1024, // 2 MB
             },
             {
+                id: '4',
                 type: 'image',
                 url: image1,
                 name: 'image4.jpg',
@@ -88,6 +95,7 @@ export const MOCK_MASSAGES: Omit<MessageType, 'id' | 'timestamp'>[] = [
         receiverId: '',
         attachments: [
             {
+                id: '5',
                 type: 'file',
                 url: 'https://limewire.com/d/JFWad#BgnLvC1D5k',
                 name: 'Кассовый чек #8730078768.pdf',
@@ -101,6 +109,7 @@ export const MOCK_MASSAGES: Omit<MessageType, 'id' | 'timestamp'>[] = [
         receiverId: '',
         attachments: [
             {
+                id: '6',
                 type: 'audio',
                 url: audio,
                 size: 364000,
@@ -114,12 +123,14 @@ export const MOCK_MASSAGES: Omit<MessageType, 'id' | 'timestamp'>[] = [
         receiverId: 'user-1',
         attachments: [
             {
+                id: '7',
                 type: 'image',
                 url: image1,
                 name: 'image1.jpg',
                 size: 1024 * 1024, // 1 MB
             },
             {
+                id: '8',
                 type: 'image',
                 url: image2,
                 name: 'image2.jpg',
@@ -140,6 +151,7 @@ export const MOCK_MASSAGES: Omit<MessageType, 'id' | 'timestamp'>[] = [
         receiverId: '',
         attachments: [
             {
+                id: '9',
                 type: 'file',
                 url: 'https://limewire.com/d/JFWad#BgnLvC1D5k',
                 name: 'Кассовый чек #8730078768.pdf',

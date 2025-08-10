@@ -8,6 +8,18 @@
     background-color: var(--Darkner-darkner-8);
     border-radius: 50%;
 
+    &_light {
+        .avatar__messenger-wrapper {
+            background-color: var(--Interface-background);
+        }
+    }
+
+    &_dark {
+        .avatar__messenger-wrapper {
+            background-color: var(--Interface-background-dark-1);
+        }
+    }
+
     &__image {
         width: 48px;
         height: 48px;
@@ -29,7 +41,6 @@
         width: 24px;
         height: 24px;
         border-radius: 50%;
-        background-color: var(--Interface-background);
     }
 
     &__messenger {

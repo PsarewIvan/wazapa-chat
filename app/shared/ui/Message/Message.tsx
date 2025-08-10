@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import classNames from 'classnames';
-import type { AttachmentType, MessageStatusType } from '~/shared/types/message';
+import type { MessageStatusType, MessageType } from '~/shared/types/message';
 import SenderCorner from '~/shared/icons/SenderCorner';
 import ReceiverCorner from '~/shared/icons/ReceiverCorner';
 import { getFormattedTime } from '~/shared/helpers/getFormattedTime';
@@ -16,12 +16,7 @@ type Props = {
     status: MessageStatusType;
     text?: string;
     timestamp: Date;
-    attachments?: Array<{
-        type: AttachmentType;
-        url: string;
-        name?: string;
-        size?: number;
-    }>;
+    attachments?: MessageType['attachments'];
 };
 
 function Message({
@@ -42,7 +37,7 @@ function Message({
                 [styles['message_own']]: hasOwn,
             })}
         >
-            {images && <MessageImages images={images} />}
+            {images && <MessageImages images={images} text={text} />}
             {files && <MessageFiles files={files} />}
             {audios && <MessageAudio audios={audios} />}
             {text && <div className={styles['message__text']}>{text}</div>}

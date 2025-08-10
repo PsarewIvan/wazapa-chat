@@ -9,6 +9,7 @@ export type MessageType = {
     timestamp: Date;
     status: MessageStatusType;
     attachments?: Array<{
+        id: string;
         type: AttachmentType;
         url: string;
         name?: string;

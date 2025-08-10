@@ -3,8 +3,26 @@
     align-items: center;
     gap: 12px;
     padding: 10px 12px 10px 24px;
-    background-color: var(--Interface-background);
-    border-bottom: 1px solid var(--Interface-border-100);
+
+    &_light {
+        background-color: var(--Interface-background);
+    }
+
+    &_dark {
+        background-color: var(--Interface-background-dark-1);
+
+        .header__name {
+            color: var(--Text-text-primary-invert);
+        }
+
+        .header__phone {
+            color: var(--Text-text-primary-invert);
+        }
+
+        .header__close {
+            color: var(--Text-text-secondary-invert);
+        }
+    }
 
     &__avatar {
         flex-shrink: 0;
@@ -32,5 +50,10 @@
         white-space: nowrap;
         font-size: 12px;
         line-height: 16px;
+    }
+
+    &__close-icon {
+        width: 24px;
+        height: 24px;
     }
 }

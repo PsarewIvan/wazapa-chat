@@ -16,12 +16,19 @@ const MESSENGER_ICONS: Record<MessengerType, string> = {
 type Props = {
     className?: string;
     messenger: MessengerType;
+    theme?: 'dark' | 'light';
     url: string | null;
 };
 
-function Avatar({ className, messenger, url }: Props) {
+function Avatar({ className, messenger, theme = 'light', url }: Props) {
     return (
-        <div className={classNames(styles['avatar'], className)}>
+        <div
+            className={classNames(
+                styles['avatar'],
+                styles[`avatar_${theme}`],
+                className
+            )}
+        >
             <img
                 className={classNames(styles['avatar__image'], {
                     [styles['avatar__image_unknown']]: !url,
