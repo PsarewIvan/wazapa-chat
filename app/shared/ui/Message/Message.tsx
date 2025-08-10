@@ -4,9 +4,9 @@ import type { AttachmentType, MessageStatusType } from '~/shared/types/message';
 import SenderCorner from '~/shared/icons/SenderCorner';
 import ReceiverCorner from '~/shared/icons/ReceiverCorner';
 import { getFormattedTime } from '~/shared/helpers/getFormattedTime';
-import MessageImages from '../MessageImages/MessageImages';
-import MessageFiles from '../MessageFiles/MessageFiles';
-import MessageAudio from '../MessageAudio/MessageAudio';
+import MessageImages from './MessageImages/MessageImages';
+import MessageFiles from './MessageFiles/MessageFiles';
+import MessageAudio from './MessageAudio/MessageAudio';
 import MessageStatus from '../MessageStatus/MessageStatus';
 import styles from './Message.module.scss';
 
