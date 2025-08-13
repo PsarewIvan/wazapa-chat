@@ -5,10 +5,13 @@ import { toggleMark } from './helpers';
 import type { TextEditorValue } from './types';
 import HoveringToolbar from './HoveringToolbar';
 import Leaf from './Leaf';
+import EmojiButton from './EmojiButton/EmojiButton';
 import styles from './TextEditor.module.scss';
 
+const EMPTY_VALUE: TextEditorValue = [{ children: [{ text: '' }] }];
+
 type Props = {
-    value: TextEditorValue;
+    value: TextEditorValue | null;
     onChange: (value: TextEditorValue) => void;
 };
 
@@ -19,7 +22,7 @@ function TextEditor({ value, onChange }: Props) {
         <Slate
             key={JSON.stringify(value ?? '')}
             editor={editor}
-            initialValue={value}
+            initialValue={value ?? EMPTY_VALUE}
             onChange={onChange}
         >
             <HoveringToolbar />
@@ -42,6 +45,7 @@ function TextEditor({ value, onChange }: Props) {
                         }
                     }}
                 />
+                <EmojiButton />
             </div>
         </Slate>
     );

@@ -1,0 +1,47 @@
+.wrapper {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+}
+
+.button {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: var(--Text-text-secondary);
+    cursor: pointer;
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.popup {
+    position: absolute;
+    z-index: 99;
+    bottom: calc(100% + 28px);
+    right: -12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background-color: var(--Interface-background);
+    box-shadow:
+        0 8px 16px var(--Darkner-darkner-8),
+        0 0 4px var(--Darkner-darkner-4);
+
+    &__button {
+        padding: 4px;
+        margin: 0;
+        display: flex;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}

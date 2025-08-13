@@ -11,9 +11,7 @@ import styles from './ChatInput.module.scss';
 function ChatInput() {
     const { activeUserId, messageToSend, messageChange } = useStore();
 
-    const value = activeUserId
-        ? (messageToSend[activeUserId] ?? [{ children: [{ text: '' }] }])
-        : [{ children: [{ text: '' }] }];
+    const value = activeUserId ? (messageToSend[activeUserId] ?? null) : null;
 
     const handleFileAdd = useCallback(() => {
         // TODO: add function to add file
