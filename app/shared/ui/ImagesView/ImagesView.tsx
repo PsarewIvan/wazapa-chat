@@ -2,8 +2,8 @@ import { memo, useCallback, useState } from 'react';
 import classNames from 'classnames';
 import CaretLeft from '~/shared/icons/CaretLeft';
 import Button from '~/shared/ui/Button/Button';
-import ChatHeader from '../ChatHeader/ChatHeader';
 import styles from './ImagesView.module.scss';
+import ChatHeader from '../ChatHeader/ChatHeader';
 
 type Props = {
     activeId: string;

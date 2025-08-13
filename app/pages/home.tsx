@@ -1,16 +1,17 @@
 import { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
-import { chatStore } from '~/shared/store/ChatStore';
+import classNames from 'classnames';
 import Chat from '~/widgets/Chat/Chat';
 import Sidebar from '~/widgets/Sidebar/Sidebar';
 import styles from './home.module.scss';
+import { useStore } from '~/shared/providers/StoreContext';
 
 function Home() {
-    const users = chatStore.users;
+    const { activeUserId, users, initUsers } = useStore();
 
     useEffect(() => {
         if (users.length === 0) {
-            chatStore.initUsers();
+            initUsers();
         }
     });
 
@@ -21,7 +22,11 @@ function Home() {
             ) : (
                 <>
                     <Sidebar className={styles['home__sidebar']} />
-                    <Chat className={styles['home__chat']} />
+                    <Chat
+                        className={classNames(styles['home__chat'], {
+                            [styles['home__chat_active']]: activeUserId,
+                        })}
+                    />
                 </>
             )}
         </div>

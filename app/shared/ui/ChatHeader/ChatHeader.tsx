@@ -2,9 +2,11 @@ import classNames from 'classnames';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '~/shared/providers/StoreContext';
 import Avatar from '~/shared/ui/Avatar/Avatar';
-import styles from './ChatHeader.module.scss';
 import Button from '~/shared/ui/Button/Button';
 import CrossIcon from '~/shared/icons/CrossIcon';
+import ArrowLeftIcon from '~/shared/icons/ArrowLeftIcon';
+import styles from './ChatHeader.module.scss';
+import { useCallback } from 'react';
 
 type Props = {
     className?: string;
@@ -13,7 +15,11 @@ type Props = {
 };
 
 function ChatHeader({ className, theme = 'light', onClose }: Props) {
-    const { activeUser } = useStore();
+    const { activeUser, setActiveUser } = useStore();
+
+    const handleBackClick = useCallback(() => {
+        setActiveUser(null);
+    }, []);
 
     if (!activeUser) {
         return null;
@@ -27,6 +33,14 @@ function ChatHeader({ className, theme = 'light', onClose }: Props) {
                 className
             )}
         >
+            {!onClose && (
+                <Button
+                    className={styles['header__back-button']}
+                    onClick={handleBackClick}
+                >
+                    <ArrowLeftIcon className={styles['header__back-icon']} />
+                </Button>
+            )}
             <Avatar
                 className={styles['header__avatar']}
                 messenger={activeUser.messenger}

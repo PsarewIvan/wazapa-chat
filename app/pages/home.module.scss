@@ -18,3 +18,25 @@
         width: 100%;
     }
 }
+
+@media (max-width: 1000px) {
+    .home {
+        &__sidebar {
+            width: 100%;
+        }
+
+        &__chat {
+            width: 100%;
+            display: none;
+
+            &_active {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                display: flex;
+            }
+        }
+    }
+}

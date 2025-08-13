@@ -24,3 +24,10 @@
         transition: color 0.3s;
     }
 }
+
+@media (max-width: 1000px) {
+    .chat-input {
+        padding: 12px 8px;
+        gap: 8px;
+    }
+}

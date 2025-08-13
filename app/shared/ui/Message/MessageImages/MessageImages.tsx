@@ -1,7 +1,7 @@
 import { memo, useCallback, useState } from 'react';
 import classNames from 'classnames';
+import ImagesView from '../../ImagesView/ImagesView';
 import styles from './MessageImages.module.scss';
-import ImagesView from '~/features/ImagesView/ImagesView';
 
 type Props = {
     images: {

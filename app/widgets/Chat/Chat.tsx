@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite';
 import classNames from 'classnames';
-import ChatHeader from '~/features/ChatHeader/ChatHeader';
 import ChatInput from '~/features/ChatInput/ChatInput';
 import Messages from '~/features/Messages/Messages';
+import ChatHeader from '~/shared/ui/ChatHeader/ChatHeader';
 import EmptyChat from '~/shared/ui/EmptyChat/EmptyChat';
 import { useStore } from '~/shared/providers/StoreContext';
 import styles from './Chat.module.scss';

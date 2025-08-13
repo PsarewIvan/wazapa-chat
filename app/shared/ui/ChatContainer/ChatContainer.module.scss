@@ -27,6 +27,12 @@
     }
 }
 
+@media (max-width: 1000px) {
+    .container {
+        padding: 0 16px 16px;
+    }
+}
+
 .scroll-action {
     position: absolute;
     z-index: 999;

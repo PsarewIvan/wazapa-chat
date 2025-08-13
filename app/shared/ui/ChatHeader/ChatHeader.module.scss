@@ -24,6 +24,16 @@
         }
     }
 
+    &__back-button {
+        display: none;
+    }
+
+    &__back-icon {
+        width: 24px;
+        height: 24px;
+        color: currentColor;
+    }
+
     &__avatar {
         flex-shrink: 0;
     }
@@ -55,5 +65,15 @@
     &__close-icon {
         width: 24px;
         height: 24px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .header {
+        padding: 10px 8px;
+
+        &__back-button {
+            display: flex;
+        }
     }
 }

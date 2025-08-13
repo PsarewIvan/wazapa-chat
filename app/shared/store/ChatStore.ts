@@ -16,7 +16,7 @@ export class ChatStore {
         makeAutoObservable(this);
     }
 
-    setActiveUser = (userId: string) => {
+    setActiveUser = (userId: string | null) => {
         runInAction(() => {
             this.activeUserId = userId;
         });
