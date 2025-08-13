@@ -19,8 +19,8 @@ function Chat({ className }: Props) {
             {activeUserId ? (
                 <>
                     <ChatHeader className={styles['chat__header']} />
-                    <Messages />
-                    <ChatInput />
+                    <Messages className={styles['chat__content']} />
+                    <ChatInput className={styles['chat__footer']} />
                 </>
             ) : (
                 <EmptyChat className={styles['chat__empty']} />

@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { observer } from 'mobx-react-lite';
+import classNames from 'classnames';
 import { useStore } from '~/shared/providers/StoreContext';
 import Microphone from '~/shared/icons/Microphone';
 import Paperclip from '~/shared/icons/Paperclip';
@@ -8,7 +9,11 @@ import Button from '~/shared/ui/Button/Button';
 import TextEditor from '~/shared/ui/TextEditor/TextEditor';
 import styles from './ChatInput.module.scss';
 
-function ChatInput() {
+type Props = {
+    className?: string;
+};
+
+function ChatInput({ className }: Props) {
     const { activeUserId, messageToSend, messageChange } = useStore();
 
     const value = activeUserId ? (messageToSend[activeUserId] ?? null) : null;
@@ -22,7 +27,7 @@ function ChatInput() {
     }, []);
 
     return (
-        <div className={styles['chat-input']}>
+        <div className={classNames(styles['chat-input'], className)}>
             <Button
                 className={styles['chat-input__file']}
                 onClick={handleFileAdd}

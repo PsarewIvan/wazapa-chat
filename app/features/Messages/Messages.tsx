@@ -6,13 +6,17 @@ import Message from '~/shared/ui/Message/Message';
 import ChatContainer from '~/shared/ui/ChatContainer/ChatContainer';
 import styles from './Messages.module.scss';
 
-function Messages() {
+type Props = {
+    className?: string;
+};
+
+function Messages({ className }: Props) {
     const { activeUserId, messagesForActiveUser } = useStore();
 
     const hasPrevOwnRef = useRef(false);
 
     return (
-        <ChatContainer messages={messagesForActiveUser}>
+        <ChatContainer className={className} messages={messagesForActiveUser}>
             {messagesForActiveUser.map((message, index) => {
                 const hasOwn = message.receiverId === activeUserId;
 

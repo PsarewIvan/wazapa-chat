@@ -1,8 +1,16 @@
+.wrapper {
+    position: relative;
+    min-height: 0;
+    display: flex;
+}
+
 .container {
+    position: relative;
     overflow-y: auto;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    width: 100%;
     padding: 0 24px 24px;
 
     &::-webkit-scrollbar {
@@ -16,5 +24,27 @@
     &::-webkit-scrollbar-thumb {
         background-color: var(--Text-text-third);
         border-radius: 4px;
+    }
+}
+
+.scroll-action {
+    position: absolute;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 24px;
+    right: 24px;
+    border-radius: 12px;
+    background-color: var(--Interface-background);
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &_showed {
+        opacity: 1;
+    }
+
+    &__icon {
+        transform: rotate(-90deg);
     }
 }
