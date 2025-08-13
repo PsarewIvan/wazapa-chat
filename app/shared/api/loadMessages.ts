@@ -8,7 +8,7 @@ function getMessages(): Record<string, MessageType[]> {
     const result: Record<string, MessageType[]> = {};
 
     Object.values(MOCK_USERS).forEach((user, userIndex) => {
-        result[user.id] = Array.from({ length: 30 }, (_, index) => {
+        const arr = Array.from({ length: 30 }, (_, index) => {
             const original = MOCK_MASSAGES[index % MOCK_MASSAGES.length];
 
             return {
@@ -21,12 +21,12 @@ function getMessages(): Record<string, MessageType[]> {
                 receiverId:
                     original.receiverId === '' ? user.id : original.receiverId,
                 id: `msg-${index + 1}`,
-                timestamp: new Date(now - index * 60_000 * 60 * 5), // 5 hours
+                timestamp: new Date(now - (30 - index) * 60_000 * 60 * 5), // 5 hours
             };
         });
 
         if (userIndex === 0) {
-            result[user.id].push({
+            arr.push({
                 id: '33333',
                 timestamp: new Date(),
                 text: 'Добрый день! Хочу записаться на маникюр на следующую неделю.',
@@ -37,7 +37,7 @@ function getMessages(): Record<string, MessageType[]> {
         }
 
         if (userIndex === 1) {
-            result[user.id].push(
+            arr.push(
                 {
                     id: '4444',
                     timestamp: new Date(),
@@ -58,7 +58,7 @@ function getMessages(): Record<string, MessageType[]> {
         }
 
         if (userIndex === 2) {
-            result[user.id].push({
+            arr.push({
                 id: '666',
                 timestamp: new Date(),
                 text: 'Фото супер! Такой дизайн вполне можно сделать, и на твоей длине тоже будет смотреться стильно 🙌\nПятницу в 15:30 записала. Учти, что с дизайном может занять до 1ч 40 мин — но мы постараемся по максимуму уложиться.',
@@ -69,7 +69,7 @@ function getMessages(): Record<string, MessageType[]> {
         }
 
         if (userIndex === 3) {
-            result[user.id].push({
+            arr.push({
                 id: '666',
                 timestamp: new Date(),
                 text: 'Доброе утро! Напоминаю, сегодня у тебя в 16:00 окрашивание 💇‍♀️',
@@ -78,6 +78,8 @@ function getMessages(): Record<string, MessageType[]> {
                 receiverId: 'user-1',
             });
         }
+
+        result[user.id] = arr;
     });
 
     return result;

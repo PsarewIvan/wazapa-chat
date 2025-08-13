@@ -11,3 +11,21 @@
         margin-left: auto;
     }
 }
+
+.date {
+    position: sticky;
+    top: 8px;
+    z-index: 999;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 8px 16px;
+    margin: 12px auto;
+    border-radius: 12px;
+    background-color: var(--Text-text-third);
+    color: var(--Text-text-primary-invert);
+    font-size: 14px;
+    line-height: 20px;
+}

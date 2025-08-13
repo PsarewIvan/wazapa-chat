@@ -13,7 +13,7 @@ const SHORT_MONTHS = [
     'дек',
 ];
 
-export function getFormattedTime(date: Date): string {
+export function getFormattedTime(date: Date, withoutTime?: boolean): string {
     const now = new Date();
     const input = new Date(date);
 
@@ -35,12 +35,13 @@ export function getFormattedTime(date: Date): string {
     });
 
     if (isToday) {
-        return time;
+        return withoutTime ? 'Сегодня' : time;
     } else if (isYesterday) {
-        return `Вчера ${time}`;
+        return `Вчера ${withoutTime ? '' : time}`;
     } else {
         const day = input.getDate();
         const monthShort = SHORT_MONTHS[input.getMonth()];
-        return `${day} ${monthShort} ${time}`;
+
+        return `${day} ${monthShort} ${withoutTime ? '' : time}`;
     }
 }
