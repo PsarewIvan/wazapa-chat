@@ -27,6 +27,10 @@ function MessageImages({ images, text }: Props) {
         return () => setPreviewId(id);
     }, []);
 
+    const handlePreviewChange = useCallback((id: string) => {
+        setPreviewId(id);
+    }, []);
+
     return (
         <>
             <div
@@ -59,6 +63,7 @@ function MessageImages({ images, text }: Props) {
                     images={images}
                     text={text}
                     onClose={handlePreviewClose}
+                    onImageChange={handlePreviewChange}
                 />
             )}
         </>

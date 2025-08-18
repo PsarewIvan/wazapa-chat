@@ -1,9 +1,9 @@
-import { memo, useCallback, useState } from 'react';
-import classNames from 'classnames';
+import { memo, useCallback } from 'react';
 import CaretLeft from '~/shared/icons/CaretLeft';
 import Button from '~/shared/ui/Button/Button';
-import styles from './ImagesView.module.scss';
 import ChatHeader from '../ChatHeader/ChatHeader';
+import Sidebar from './Sidebar';
+import styles from './ImagesView.module.scss';
 
 type Props = {
     activeId: string;
@@ -15,40 +15,31 @@ type Props = {
     }[];
     text?: string;
     onClose: () => void;
+    onImageChange: (id: string) => void;
 };
 
-function ImagesView({ activeId, images, text, onClose }: Props) {
-    const [previewImage, setPreviewImage] = useState(
-        images.find((image) => image.id === activeId) ?? null
-    );
+function ImagesView({ activeId, images, text, onClose, onImageChange }: Props) {
+    const previewImage = images.find((image) => image.id === activeId) ?? null;
 
     const handleBackClick = useCallback(() => {
-        setPreviewImage((prevValue) => {
-            const currentIndex = images.findIndex(
-                (image) => image.id === prevValue?.id
-            );
+        const currentIndex = images.findIndex((image) => image.id === activeId);
 
-            if (currentIndex === 0) {
-                return images[images.length - 1];
-            }
-
-            return images[currentIndex - 1];
-        });
-    }, [images]);
+        if (currentIndex === 0) {
+            onImageChange(images[images.length - 1].id);
+        } else {
+            onImageChange(images[currentIndex - 1].id);
+        }
+    }, [activeId, images, onImageChange]);
 
     const handleForwardClick = useCallback(() => {
-        setPreviewImage((prevValue) => {
-            const currentIndex = images.findIndex(
-                (image) => image.id === prevValue?.id
-            );
+        const currentIndex = images.findIndex((image) => image.id === activeId);
 
-            if (currentIndex === images.length - 1) {
-                return images[0];
-            }
-
-            return images[currentIndex + 1];
-        });
-    }, [images]);
+        if (currentIndex === images.length - 1) {
+            onImageChange(images[0].id);
+        } else {
+            onImageChange(images[currentIndex + 1].id);
+        }
+    }, [activeId, images, onImageChange]);
 
     return (
         <div className={styles['view']}>
@@ -79,26 +70,11 @@ function ImagesView({ activeId, images, text, onClose }: Props) {
                         </div>
                     )}
                 </div>
-                <div className={styles['view__sidebar']}>
-                    {images.map((image) => (
-                        <div
-                            className={classNames(
-                                styles['view__sidebar-img-wrapper'],
-                                {
-                                    [styles[
-                                        'view__sidebar-img-wrapper_active'
-                                    ]]: image.id === previewImage?.id,
-                                }
-                            )}
-                            key={image.id}
-                        >
-                            <img
-                                className={styles['view__sidebar-img']}
-                                src={image.url}
-                            />
-                        </div>
-                    ))}
-                </div>
+                <Sidebar
+                    activeId={activeId}
+                    images={images}
+                    onImageChange={onImageChange}
+                />
             </div>
         </div>
     );
